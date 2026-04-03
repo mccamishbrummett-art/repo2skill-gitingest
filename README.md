@@ -1,8 +1,10 @@
 # 📚 repo2skill-gitingest
 
-> An AI skill for building clean LLM knowledge bases from GitHub repositories.
+> AI skill for building clean LLM knowledge bases from GitHub repositories.
 
-A skill for [Antigravity](https://antigravity.dev) (and compatible Claude-based assistants) that turns any GitHub repository into a curated, noise-free `.txt` knowledge base — ready to use as context for an AI tutor, consultant, or assistant agent.
+A universal skill for AI coding assistants (Cursor, Claude Code, Antigravity, Windsurf, and others) that turns any GitHub repository into a curated, noise-free `.txt` knowledge base — ready to use as context for an AI tutor, consultant, or assistant agent.
+
+Works with any LLM model that supports the skill format (SKILL.md with YAML frontmatter).
 
 ## ✨ What it does
 
@@ -27,15 +29,17 @@ GitDB/
 - Python 3.8+
 - `pip install gitingest`
 - `git` in PATH (for `--wiki` mode)
-- Antigravity or a compatible Claude-based assistant
 
-## 🚀 Quick start
+## 🚀 Installation
 
-Install the skill by copying the `gitingest/` folder into your Antigravity skills directory:
+Copy the skill folder into your assistant's skills directory:
 
-```
-%APPDATA%\.gemini\antigravity\skills\gitingest\
-```
+| Assistant | Path |
+|-----------|------|
+| **Antigravity** | `%APPDATA%\.gemini\antigravity\skills\gitingest\` |
+| **Claude Code** | `.claude/skills/gitingest/` (project) or `~/.claude/skills/gitingest/` (global) |
+| **Cursor** | `.cursor/skills/gitingest/` |
+| **Other** | Check your assistant's skill/plugin directory |
 
 Then just ask your AI assistant:
 
@@ -45,9 +49,9 @@ Then just ask your AI assistant:
 
 The skill handles the rest.
 
-## 📜 Script usage (manual)
+## 📜 Script usage (standalone)
 
-The `scripts/fetch_repo.py` script can also be used directly:
+The `scripts/fetch_repo.py` script can also be used directly without any AI assistant:
 
 ```bash
 # Step 1: Get file tree for analysis
